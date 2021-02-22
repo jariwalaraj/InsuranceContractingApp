@@ -1,0 +1,314 @@
+{
+	"info": {
+		"_postman_id": "a92ed389-0476-4a55-bd06-2aac66e07f11",
+		"name": "TestApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Advisors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44350/api/Advisors?id=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44350",
+					"path": [
+						"api",
+						"Advisors"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Advisors",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"advisorsId\": 9,\r\n    \"contractorId\": 1,\r\n    \"firstName\": \"RAj\",\r\n    \"lastName\": \"Gates\",\r\n    \"address\": \"123 test location\",\r\n    \"phoneNumber\": \"6478523574\",\r\n    \"healthStatus\": \"Green\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44300/api/Advisors?id=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44300",
+					"path": [
+						"api",
+						"Advisors"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get MGAs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44350/api/mgas?id=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44350",
+					"path": [
+						"api",
+						"mgas"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update MGAs",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mgaId\": 1,\r\n    \"contractorId\": 10,\r\n    \"businessName\": \"not an apple\",\r\n    \"businessAddress\": \"\",\r\n    \"phoneNumber\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44350/api/mgas",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44350",
+					"path": [
+						"api",
+						"mgas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Carrier",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44300/api/Carrier?id=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44300",
+					"path": [
+						"api",
+						"Carrier"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Carrier",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"carrierId\": 1,\r\n    \"contractorId\": 5,\r\n    \"businessName\": \"hahahahahahahhaha\",\r\n    \"businessAddress\": \"Raj street\",\r\n    \"phoneNumber\": \"6549876545\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44300/api/Carrier?id=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44300",
+					"path": [
+						"api",
+						"Carrier"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Terminate Contract",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44350/api/Contract?id=2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44350",
+					"path": [
+						"api",
+						"Contract"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Establish Contract",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44300/api/Contract?id1=1&id2=8",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44300",
+					"path": [
+						"api",
+						"Contract"
+					],
+					"query": [
+						{
+							"key": "id1",
+							"value": "1"
+						},
+						{
+							"key": "id2",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Contracts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44300/api/Contract",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44300",
+					"path": [
+						"api",
+						"Contract"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all MGAs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44350/api/mgas/GetAllMGAs",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44350",
+					"path": [
+						"api",
+						"mgas",
+						"GetAllMGAs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Are Connected",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44350/api/contract/areconnected?id1=1&id2=10",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44350",
+					"path": [
+						"api",
+						"contract",
+						"areconnected"
+					],
+					"query": [
+						{
+							"key": "id1",
+							"value": "1"
+						},
+						{
+							"key": "id2",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
