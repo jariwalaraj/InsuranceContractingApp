@@ -31,8 +31,7 @@ interface UpdateCarrierActions {
 }
 
 interface GetCarrierActions {
-    type: 'UPDATE_CARRIER';
-    id: number;
+    type: 'GET_CARRIER';
     Carrier: Carrier;
 }
 
@@ -58,10 +57,14 @@ export const actionCreators = {
         const appState = getState();
 
     },
-    getCarrier: (id: number): AppThunkAction<KnownAction> => (dispatch, getDate) => {
-        const appState = getsta();
+    getCarrier: (id: number): AppThunkAction<KnownAction> => (dispatch, getState) => {
+        const appState = getState();
 
-        if (appState && appState.)
+        fetch(`api/Carrier?id=${id}`)
+            .then(response => response.json() as Promise<Carrier>)
+            .then(data => {
+                dispatch({ type: 'GET_CARRIER', Carrier: data });
+            });
 
     }
 };
