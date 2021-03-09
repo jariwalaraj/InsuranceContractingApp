@@ -32,7 +32,8 @@ class CarriersData extends React.PureComponent<CarriersProps> {
   private ensureDataFetched() {
     const startDateIndex = parseInt(this.props.match.params.startDateIndex, 10) || 0;
       this.props.requestCarriers(startDateIndex);
-  }
+    }
+
 
   private renderCarriersTable() {
     return (
@@ -41,7 +42,8 @@ class CarriersData extends React.PureComponent<CarriersProps> {
           <tr>
             <th>Business Name</th>
             <th>Business Address</th>
-            <th>Phone Number</th>
+                    <th>Phone Number</th>
+                    <th>Operations</th>
           </tr>
         </thead>
             <tbody>
@@ -50,6 +52,8 @@ class CarriersData extends React.PureComponent<CarriersProps> {
                         <td>{Carrier.businessName}</td>
                         <td>{Carrier.businessAddress}</td>
                         <td>{Carrier.phoneNumber}</td>
+                        <td><Link className='btn btn-outline-secondary btn-sm' to={`/fetch-carriers?startDateIndex=1`}>Update</Link></td>
+                        <td><Link className='btn btn-outline-secondary btn-sm' to={`/fetch-carriers?startDateIndex=1`}>Delete</Link></td>
                     </tr>
           )}
         </tbody>

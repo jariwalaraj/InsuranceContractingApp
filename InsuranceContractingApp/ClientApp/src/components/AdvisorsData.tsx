@@ -30,7 +30,8 @@ class AdvisorsData extends React.PureComponent<AdvisorsProps> {
   }
 
   private ensureDataFetched() {
-      const startDateIndex = parseInt(this.props.match.params.startDateIndex, 10) || 0;
+      const params = new URLSearchParams(this.props.location.search);
+      const startDateIndex = parseInt(params.get('startDateIndex') || '1', 10);
       this.props.requestAdvisors(startDateIndex);
   }
 

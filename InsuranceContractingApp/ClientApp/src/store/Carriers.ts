@@ -25,12 +25,25 @@ interface ReceiveCarriersAction {
     Carriers: Carrier[];
 }
 
-type KnownAction = RequestCarriersAction | ReceiveCarriersAction;
+interface UpdateCarrierActions {
+    type: 'UPDATE_CARRIER';
+    Carrier: Carrier; 
+}
+
+interface GetCarrierActions {
+    type: 'UPDATE_CARRIER';
+    id: number;
+    Carrier: Carrier;
+}
+
+
+type KnownAction = RequestCarriersAction | ReceiveCarriersAction | UpdateCarrierActions | GetCarrierActions;
 
 export const actionCreators = {
     requestCarriers: (startDateIndex: number): AppThunkAction<KnownAction> => (dispatch, getState) => {
         // Only load data if it's something we don't already have (and are not already loading)
         const appState = getState();
+
         if (appState && appState.carriers && startDateIndex !== appState.carriers.startDateIndex) {
             fetch(`api/carrier/getallcarriers`)
                 .then(response => response.json() as Promise<Carrier[]>)
@@ -40,6 +53,16 @@ export const actionCreators = {
 
             dispatch({ type: 'REQUEST_CARRIERS', startDateIndex: startDateIndex });
         }
+    },
+    updateCarrier: (Carrier: Carrier): AppThunkAction<KnownAction> => (dispatch, getState) => {
+        const appState = getState();
+
+    },
+    getCarrier: (id: number): AppThunkAction<KnownAction> => (dispatch, getDate) => {
+        const appState = getsta();
+
+        if (appState && appState.)
+
     }
 };
 

@@ -9,7 +9,7 @@ import * as MGAsStore from '../store/MGAs';
 type MGAProps =
     MGAsStore.MGAsState // ... state we've requested from the Redux store
     & typeof MGAsStore.actionCreators // ... plus action creators we've requested
-    & RouteComponentProps<{ startDateIndex: string }>; // ... plus incoming routing parameters
+    & RouteComponentProps<{ }>; // ... plus incoming routing parameters
 
 class MGAsData extends React.PureComponent<MGAProps> {
   // This method is called when the component is first added to the document
@@ -34,7 +34,8 @@ class MGAsData extends React.PureComponent<MGAProps> {
   }
 
   private ensureDataFetched() {
-    const startDateIndex = parseInt(this.props.match.params.startDateIndex, 10) || 0;
+      const params = new URLSearchParams(this.props.location.search);
+      const startDateIndex = parseInt(params.get('startDateIndex') || '1', 10);
       this.props.requestMGAs(startDateIndex);
   }
 
